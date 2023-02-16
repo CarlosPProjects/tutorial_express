@@ -1,5 +1,4 @@
-const mongoose = require("mongoose");
-mongoose.set("strictQuery", false);
+const mongoose = require('mongoose');
 
 const ProjectSchema = new mongoose.Schema({
   name: {
@@ -10,12 +9,12 @@ const ProjectSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ["Not Started", "In Progress", "Completed"],
+    enum: ['Not Started', 'In Progress', 'Completed'],
   },
-  clientID: {
+  clientId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Client",
+    ref: 'Client',
   },
 });
 
-module.exports = mongoose.model("Project", ProjectSchema);
+module.exports = mongoose.model('Project', ProjectSchema);
